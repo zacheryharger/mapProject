@@ -8,7 +8,7 @@ import java.util.List;
 
 //Processing library
 import processing.core.PApplet;
-
+import processing.core.PGraphics;
 //Unfolding libraries
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.marker.Marker;
@@ -33,7 +33,7 @@ public class EarthquakeCityMap extends PApplet {
 	private static final long serialVersionUID = 1L;
 
 	// IF YOU ARE WORKING OFFLINE, change the value of this variable to true
-	private static final boolean offline = false;
+	private static final boolean offline = true;
 	
 	// Less than this threshold is a light earthquake
 	public static final float THRESHOLD_MODERATE = 5;
@@ -148,6 +148,35 @@ public class EarthquakeCityMap extends PApplet {
 	// TODO: Implement this method to draw the key
 	private void addKey() 
 	{	
+		PGraphics key;
+		key = createGraphics(170, 250);
+		key.beginDraw();
+		key.background(150);
+		key.stroke(255);
+		key.endDraw();
+		image(key, 25, 50);
+		
+		
+		fill(255,0,0);
+		ellipse(50,75,20,20);
+		
+		
+				
+		fill(255, 128, 0);
+		ellipse(50,125,15,15);
+		
+		fill(0,200,0);
+		ellipse(50,175,10,10);
+		
+		
+		fill(0,0,0);
+		text("Earthquake Key", 80,60);
+		text("5.0+ Magnitude",75,80);
+
+		text("Below 4.0 Magnitude",75,179);
+
+		text("4.0+ Magnitude",75,128);
+		
 		// Remember you can use Processing's graphics methods here
 	
 	}
