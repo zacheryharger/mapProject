@@ -78,7 +78,11 @@ public class EarthquakeCityMap extends PApplet {
 	    // earthquakes.  Then add each new SimplePointMarker to the 
 	    // List markers (so that it will be added to the map in the line below)
 	    for (PointFeature eq: earthquakes) {
+	    	Object magObj = eq.getProperty("magnitude");
+			float mag = Float.parseFloat(magObj.toString());
+			if (mag >= 3) {
 	    	markers.add(createMarker(eq));
+			}
 	    	//markers.add(new SimplePointMarker(eq.getLocation(),eq.getProperties()));
 	    }
 	    // Add the markers to the map so that they are displayed
@@ -104,13 +108,13 @@ public class EarthquakeCityMap extends PApplet {
 		// Create a new SimplePointMarker at the location given by the PointFeature
 		SimplePointMarker marker = new SimplePointMarker(feature.getLocation());
 		
-		Object magObj = feature.getProperty("magnitude");
-		float mag = Float.parseFloat(magObj.toString());
+		
+		
 		
 		// Here is an example of how to use Processing's color method to generate 
 	    // an int that represents the color yellow.  
 	    int grey = color(150,150,150);
-	    int green = color(8, 201, 15);
+	   // int green = color(8, 201, 15);
 	    int orange = color(255, 157, 0);
 	    int red = color(255, 0, 0);
 		
@@ -121,6 +125,9 @@ public class EarthquakeCityMap extends PApplet {
 	    // Rather than comparing the magnitude to a number directly, compare 
 	    // the magnitude to these variables (and change their value in the code 
 	    // above if you want to change what you mean by "moderate" and "light")
+	    Object magObj = feature.getProperty("magnitude");
+		float mag = Float.parseFloat(magObj.toString());
+	    
 	    if (mag < THRESHOLD_LIGHT && mag > 2.9) {
 	    	marker.setColor(grey);
 	    	marker.setRadius(10);
@@ -135,7 +142,9 @@ public class EarthquakeCityMap extends PApplet {
 	    }	    	
 	    else {marker.isHidden();}
 	    // Finally return the marker
-	    return marker;
+	    
+		//}
+		return marker;
 	}
 	
 	public void draw() {
