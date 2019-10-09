@@ -29,6 +29,7 @@ public class CityMarker extends SimplePointMarker {
 	
 	
 	
+	
 	/**
 	 * Implementation of method to draw marker on the map.
 	 */

@@ -13,6 +13,7 @@ import processing.core.PGraphics;
 public abstract class EarthquakeMarker extends SimplePointMarker
 {
 	
+	
 	// Did the earthquake occur on land?  This will be set by the subclasses.
 	protected boolean isOnLand;
 
