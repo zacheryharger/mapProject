@@ -199,6 +199,7 @@ public class EarthquakeCityMap extends PApplet {
 		        	int cQuakes = 0;
 		        		
 		        	}
+		        
 	}
 		//        
 		//      Inside the loop, first initialize a quake counter.
